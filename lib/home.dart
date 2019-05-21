@@ -45,6 +45,7 @@ class _HomePageState extends State<HomePage> {
                         "PIYUSH SINHA",
                         style: TextStyle(
                             color: Colors.white,
+                            fontFamily: 'GoogleSansRegular',
                             fontSize: 50.0,
                             fontWeight: FontWeight.bold),
                       ),
@@ -70,6 +71,7 @@ class _HomePageState extends State<HomePage> {
                     "About",
                     style: TextStyle(
                       fontSize: 50.0,
+                      fontFamily: 'GoogleSansRegular',
                       color: Colors.black54,
                     ),
                   ),
@@ -80,6 +82,7 @@ class _HomePageState extends State<HomePage> {
                     "Android Developer | Flutter ❤",
                     style: TextStyle(
                       fontSize: 30.0,
+                      fontFamily: 'GoogleSansRegular',
                       color: Colors.black,
                     ),
                   ),
@@ -90,6 +93,7 @@ class _HomePageState extends State<HomePage> {
                     "Coding is something which interests me alot. I practice regularly on online judges. I am a quick learner and likes to work on challenging problems while acquiring the required knowledge.",
                     style: TextStyle(
                       fontSize: 30.0,
+                      fontFamily: 'GoogleSansRegular',
                       color: Colors.black,
                     ),
                   ),
@@ -100,6 +104,7 @@ class _HomePageState extends State<HomePage> {
                     "My journey with Android Development started in 2017 and from day one I absolutely loved it. As a teenager who always found interest in technology-related topics, this new “code” thing seemed outstandingly fascinating. I built apps for my college, worked as an Android Developer Intern with an E-commerce company. I’m looking forward to bringing that passion to a full-time role.",
                     style: TextStyle(
                       fontSize: 30.0,
+                      fontFamily: 'GoogleSansRegular',
                       color: Colors.black,
                     ),
                   ),
@@ -117,6 +122,7 @@ class _HomePageState extends State<HomePage> {
                     "Skills",
                     style: TextStyle(
                       fontSize: 50.0,
+                      fontFamily: 'GoogleSansRegular',
                       color: Colors.white,
                     ),
                   ),
@@ -164,6 +170,7 @@ class _HomePageState extends State<HomePage> {
                           "Looking for a quick learning developer? Thats me!",
                           style: TextStyle(
                             fontSize: 50.0,
+                            fontFamily: 'GoogleSansRegular',
                             color: Colors.white,
                           ),
                         ),
@@ -176,6 +183,7 @@ class _HomePageState extends State<HomePage> {
                             "Resume",
                             style: TextStyle(
                               fontSize: 30.0,
+                              fontFamily: 'GoogleSansRegular',
                               color: Colors.cyan[800],
                             ),
                           ),
@@ -204,6 +212,7 @@ class _HomePageState extends State<HomePage> {
                     "Work Samples",
                     style: TextStyle(
                       fontSize: 50.0,
+                      fontFamily: 'GoogleSansRegular',
                       color: Colors.white,
                     ),
                   ),
@@ -215,7 +224,7 @@ class _HomePageState extends State<HomePage> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
                         Container(
-                          height: 120.0,
+                          height: 150.0,
                           child: Image.network(
                               "https://www.freeiconspng.com/uploads/github-logo-icon-30.png"),
                         ),
@@ -227,6 +236,7 @@ class _HomePageState extends State<HomePage> {
                                 "Check out my Github Projects",
                                 style: TextStyle(
                                   fontSize: 30.0,
+                                  fontFamily: 'GoogleSansRegular',
                                   color: Colors.white,
                                 ),
                               ),
@@ -239,10 +249,11 @@ class _HomePageState extends State<HomePage> {
                                   "Github Profile",
                                   style: TextStyle(
                                     fontSize: 20.0,
+                                    fontFamily: 'GoogleSansRegular',
                                     color: Colors.white,
                                   ),
                                 ),
-                                color: Colors.cyan,
+                                color: Colors.cyan[800],
                               ),
                             ),
                           ],
@@ -253,7 +264,7 @@ class _HomePageState extends State<HomePage> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
                         Container(
-                          height: 120.0,
+                          height: 150.0,
                           child: Image.network(
                               "http://icons.iconarchive.com/icons/dtafalonso/android-lollipop/256/Play-Store-icon.png"),
                         ),
@@ -265,6 +276,7 @@ class _HomePageState extends State<HomePage> {
                                 "Check out my publishsed apps",
                                 style: TextStyle(
                                   fontSize: 30.0,
+                                  fontFamily: 'GoogleSansRegular',
                                   color: Colors.white,
                                 ),
                               ),
@@ -277,10 +289,11 @@ class _HomePageState extends State<HomePage> {
                                   "Google Play Dev A/C",
                                   style: TextStyle(
                                     fontSize: 20.0,
+                                    fontFamily: 'GoogleSansRegular',
                                     color: Colors.white,
                                   ),
                                 ),
-                                color: Colors.cyan,
+                                color: Colors.cyan[800],
                               ),
                             ),
                           ],
@@ -309,12 +322,14 @@ class _HomePageState extends State<HomePage> {
                     Container(height: 50.0,child: Image.network("http://www.logospng.com/images/0/gmail-logo-png-images-free-download-660.png")),
                     Text("piyush.sinha24@gmail.com",style: TextStyle(
                           fontSize: 20.0,
+                          fontFamily: 'GoogleSansRegular',
                           color: Colors.white,
                         ),)
                   ],
                 ),
                 Text("Made with ❤ By devPS", style: TextStyle(
                           fontSize: 40.0,
+                          fontFamily: 'GoogleSansRegular',
                           color: Colors.white,
                         ),),
               ],
