@@ -6,44 +6,92 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+   PageController controller = PageController(viewportFraction: 1, keepPage: true);
+  var currentPageValue = 0.0;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    controller.addListener(() {
+      setState(() {
+        currentPageValue = controller.page;
+      });
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: Text("devPS",style: TextStyle(
+                              color: Colors.white,
+                              fontFamily: 'GoogleSansRegular',
+                              fontSize: 30.0,
+                              fontWeight: FontWeight.bold),),
+                              backgroundColor: Colors.black,
+                              ),
+                              floatingActionButton: Column(
+                                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                children: <Widget>[
+                                  FloatingActionButton(child: Padding(
+                                    padding: const EdgeInsets.all(2.0),
+                                    child: Icon(Icons.arrow_drop_up,size: 20.0,),
+                                  ),backgroundColor: Colors.black,onPressed:(){controller.previousPage(duration: kTabScrollDuration, curve: Curves.ease);},),
+                                  FloatingActionButton(child: Padding(
+                                    padding: const EdgeInsets.all(2.0),
+                                    child: Icon(Icons.arrow_drop_down,size: 20.0,),
+                                  ),backgroundColor: Colors.black,onPressed: (){controller.nextPage(duration: kTabScrollDuration, curve: Curves.ease);},),
+                                ],
+                              ),
+                              
+
       body: Scrollbar(
-              child: PageView(
+               child:PageView(
           children: <Widget>[
-            Container(
+            Devps(),
+            About(),
+            Skills(),
+            Work(),
+            Contact(),
+          ],
+          scrollDirection: Axis.vertical,
+          controller: controller,
+          physics: NeverScrollableScrollPhysics(),
+          //pageSnapping: false,
+          
+        ),
+      ),
+    );
+  }
+}
+class Devps extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
               decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: NetworkImage(
-                      'https://i.kinja-img.com/gawker-media/image/upload/s--if-18tmK--/c_scale,f_auto,fl_progressive,q_80,w_800/l7qxf1lkf2oogenhr3ph.jpg'),
-                  fit: BoxFit.cover,
-                ),
+                image: DecorationImage(image: AssetImage("computer.jpg"),fit: BoxFit.cover),
               ),
               width: MediaQuery.of(context).size.width,
-              child: Column(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  SizedBox(
-                    height: 30.0,
-                  ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: <Widget>[
-                      Padding(
+                  Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Container(
                           width: 300,
                           height: 300,
                           child: CircleAvatar(
-                            backgroundImage: NetworkImage(
-                                "https://scontent.fpat2-1.fna.fbcdn.net/v/t1.0-9/46503354_2075410189214325_4591568335778349056_n.jpg?_nc_cat=108&_nc_oc=AQnQN7Ddz3Kjd8s3TkAkPzrwrB8JzmNIj7pNfXsrEdgIUkvGmJ_yZni9nXfBLspxR4s&_nc_ht=scontent.fpat2-1.fna&oh=59edd5168cb39cf876cd3969de0251f3&oe=5D6472E9"),
+                            backgroundImage: AssetImage(
+                                "me.jpg"),
                           ),
                         ),
                       ),
+
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
                       Padding(
                         padding: const EdgeInsets.all(30.0),
                         child: Text(
-                          "PIYUSH SINHA",
+                          "Hello, I'm Piyush Sinha.",
                           style: TextStyle(
                               color: Colors.white,
                               fontFamily: 'GoogleSansRegular',
@@ -51,16 +99,32 @@ class _HomePageState extends State<HomePage> {
                               fontWeight: FontWeight.bold),
                         ),
                       ),
+                      Padding(
+                        padding: const EdgeInsets.all(30.0),
+                        child: Text(
+                          "I'm an Android Developer.",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontFamily: 'GoogleSansRegular',
+                              fontSize: 30.0,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
                     ],
                   ),
                 ],
               ),
-            ),
-            Container(
+            );
+  }
+}
+class About extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: NetworkImage(
-                      'http://guldfasanen4.se/wordpress/wp-content/uploads/2015/05/white-room-background_web.jpg'),
+                  image: AssetImage(
+                      'about.jpg'),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -89,7 +153,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(10.0),
+                    padding: const EdgeInsets.only(right:45.0,top: 8.0,left: 8.0),
                     child: Text(
                       "Coding is something which interests me alot. I practice regularly on online judges. I am a quick learner and likes to work on challenging problems while acquiring the required knowledge.",
                       style: TextStyle(
@@ -100,7 +164,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(10.0),
+                    padding: const EdgeInsets.only(right:45.0,top:8.0,left:8.0),
                     child: Text(
                       "My journey with Android Development started in 2017 and from day one I absolutely loved it. As a teenager who always found interest in technology-related topics, this new “code” thing seemed outstandingly fascinating. I built apps for my college, worked as an Android Developer Intern with an E-commerce company. I’m looking forward to bringing that passion to a full-time role.",
                       style: TextStyle(
@@ -112,8 +176,13 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ],
               ),
-            ),
-            Container(
+            );
+  }
+}
+class Skills extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
               color: Colors.cyan[800],
               child: Column(
                 children: <Widget>[
@@ -136,27 +205,27 @@ class _HomePageState extends State<HomePage> {
                     children: <Widget>[
                       Container(
                         height: 120.0,
-                        child: Image.network(
-                            "http://aux4.iconspalace.com/uploads/7803638861543571477.png"),
+                        child: Image.asset(
+                            "java.png"),
                       ),
                       Container(
                         height: 120.0,
-                        child: Image.network(
-                            "http://icons.iconarchive.com/icons/dakirby309/simply-styled/256/OS-Android-icon.png"),
+                        child: Image.asset(
+                            "android.png"),
                       ),
                       Container(
                         height: 120.0,
-                        child: Image.network(
-                            "https://codelabs.flutter-io.cn/favicon.ico"),
+                        child: Image.asset(
+                            "flutter.ico"),
                       ),
                       Container(
                           height: 120.0,
-                          child: Image.network(
-                              "http://ocdatabases.com/images/python.png")),
+                          child: Image.asset(
+                              "py.png")),
                       Container(
                           height: 120.0,
-                          child: Image.network(
-                              "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/6d244090-b519-4f4a-8cf1-65500d741019/d4ougoi-de1ec5bf-8cbf-4ef7-b838-fa0de67c38db.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzZkMjQ0MDkwLWI1MTktNGY0YS04Y2YxLTY1NTAwZDc0MTAxOVwvZDRvdWdvaS1kZTFlYzViZi04Y2JmLTRlZjctYjgzOC1mYTBkZTY3YzM4ZGIucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.awCep_bjy67Qnd07RNpZMhqjsgR3emqO-YF87XO48b0")),
+                          child: Image.asset(
+                              "c.png")),
                     ],
                   ),
                   SizedBox(
@@ -196,12 +265,17 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ],
               ),
-            ),
-            Container(
+            );
+  }
+}
+class Work extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: NetworkImage(
-                      'https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-01.jpg'),
+                  image: AssetImage(
+                      'work.jpg'),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -226,8 +300,8 @@ class _HomePageState extends State<HomePage> {
                         children: <Widget>[
                           Container(
                             height: 150.0,
-                            child: Image.network(
-                                "https://www.freeiconspng.com/uploads/github-logo-icon-30.png"),
+                            child: Image.asset(
+                                "github.png"),
                           ),
                           Column(
                             children: <Widget>[
@@ -266,8 +340,8 @@ class _HomePageState extends State<HomePage> {
                         children: <Widget>[
                           Container(
                             height: 150.0,
-                            child: Image.network(
-                                "http://icons.iconarchive.com/icons/dtafalonso/android-lollipop/256/Play-Store-icon.png"),
+                            child: Image.asset(
+                                "playstore.png"),
                           ),
                           Column(
                             children: <Widget>[
@@ -305,12 +379,17 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ],
               ),
-            ),
-             Container(
+            );
+  }
+}
+class Contact extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
                decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: NetworkImage(
-                     "https://1zmiiq24oo5a7l1r624eayhp-wpengine.netdna-ssl.com/wp-content/uploads/2016/10/hacker.jpg"),
+                  image: AssetImage(
+                     "hacker.jpg"),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -320,12 +399,15 @@ class _HomePageState extends State<HomePage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Container(height: 50.0,child: Image.network("http://www.logospng.com/images/0/gmail-logo-png-images-free-download-660.png")),
-                      Text("piyush.sinha24@gmail.com",style: TextStyle(
-                            fontSize: 20.0,
-                            fontFamily: 'GoogleSansRegular',
-                            color: Colors.white,
-                          ),)
+                      Container(height: 50.0,child: Image.asset("mail.png")),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text("piyush.sinha24@gmail.com",style: TextStyle(
+                              fontSize: 20.0,
+                              fontFamily: 'GoogleSansRegular',
+                              color: Colors.white,
+                            ),),
+                      )
                     ],
                   ),
                   Text("Made with ❤ by devPS", style: TextStyle(
@@ -335,11 +417,6 @@ class _HomePageState extends State<HomePage> {
                           ),),
                 ],
               ),
-            ),
-          ],
-          scrollDirection: Axis.vertical,
-        ),
-      ),
-    );
+            );
   }
 }
