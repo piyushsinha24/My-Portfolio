@@ -102,7 +102,7 @@ class Devps extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.all(30.0),
                         child: Text(
-                          "I'm an Android Developer.",
+                          "I'm an Android Developer & Flutter Evangelist.",
                           style: TextStyle(
                               color: Colors.white,
                               fontFamily: 'GoogleSansRegular',
