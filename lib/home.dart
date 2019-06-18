@@ -258,7 +258,7 @@ class Skills extends StatelessWidget {
                           padding: const EdgeInsets.all(5.0),
                           child: RaisedButton(
                             onPressed: () {
-                              html.window.open('https://drive.google.com/open?id=1oDV9DOqWUyNdZZhzV73Dj7zfTzi_2oRu','Resume');
+                              html.window.open('https://drive.google.com/uc?export=download&id=1oDV9DOqWUyNdZZhzV73Dj7zfTzi_2oRu','Resume');
                             },
                             shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
                             child: Text(
