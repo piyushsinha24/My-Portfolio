@@ -87,6 +87,9 @@ class _HomePageState extends State<HomePage> {
           scrollDirection: Axis.vertical,
           controller: controller,
           physics: new NeverScrollableScrollPhysics(),
+           onPageChanged: (int currentPage) {
+        this.setState(() => currentPageValue = currentPage);
+      },
           //pageSnapping: false,
           
         ),
