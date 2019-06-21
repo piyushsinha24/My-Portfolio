@@ -3,8 +3,7 @@ import 'package:flutter_web/material.dart';
 import './pages/Devps.dart';
 import './pages/About.dart';
 import './pages/Skills.dart';
-import './pages/Work/Work1.dart';
-import './pages/Work/Work2.dart';
+import './pages/Work.dart';
 import './pages/Contact.dart';
 
 class HomePage extends StatefulWidget {
@@ -13,16 +12,50 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-   PageController controller = PageController(viewportFraction: 1, keepPage: true);
-  var currentPageValue = 0.0;
+   PageController controller = PageController();
+    int currentPageValue = 0;
   @override
   void initState() {
     super.initState();
-    controller.addListener(() {
-      setState(() {
-        currentPageValue = controller.page;
-      });
-    });
+    controller = PageController(initialPage: 0);
+    currentPageValue = 0;
+  }
+   Widget _buildPageButtons(String pageName, int pageNumber) {
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          currentPageValue=pageNumber;
+        });
+        controller.animateToPage(
+          pageNumber,
+          duration: Duration(milliseconds: 600),
+          curve: Curves.easeIn,
+        );
+      },
+      child: Padding(
+        padding: EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
+        child: Column(
+          children: <Widget>[
+            Text(
+              pageName,
+              style: TextStyle(
+                  color: Colors.white, fontSize: 25.0, fontFamily: 'GoogleSansRegular'),
+            ),
+            Container(
+              width: 40.0,
+              height: 2.0,
+              margin: EdgeInsets.only(top: 6.0),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(1.0),
+                color: currentPageValue == pageNumber
+                    ? Colors.white
+                    : Colors.transparent,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
   @override
   Widget build(BuildContext context) {
@@ -35,45 +68,28 @@ class _HomePageState extends State<HomePage> {
                   fontSize: 30.0,
                   fontWeight: FontWeight.bold),),
                   backgroundColor: Colors.black,
+                  actions: <Widget>[
+                    _buildPageButtons("home", 0),
+                    _buildPageButtons("about", 1),
+                    _buildPageButtons("skills", 2),
+                    _buildPageButtons("work", 3),
+                    _buildPageButtons("contact", 4),
+                  ],
                       ),
-      floatingActionButton: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: <Widget>[
-          FloatingActionButton(
-            child: Padding(
-            padding: const EdgeInsets.all(2.0),
-            child: Icon(Icons.arrow_drop_up,size: 20.0,),
-                                  ),
-            backgroundColor: Colors.black,
-            onPressed:(){controller.previousPage(duration: kTabScrollDuration, curve: Curves.ease);},),
-          FloatingActionButton(
-            child: Padding(
-            padding: const EdgeInsets.all(2.0),
-            child: Icon(Icons.arrow_drop_down,size: 20.0,),
-                                  ),
-            backgroundColor: Colors.black,
-            onPressed: (){controller.nextPage(duration: kTabScrollDuration, curve: Curves.ease);},),
-                                ],
-                              ),
-                              
-
-      body: Scrollbar(
-               child:PageView(
-                children: <Widget>[
-                    Devps(),
-                    About(),
-                    Skills(),
-                    Work1(),
-                    Work2(),
-                    Contact(),
-                ],
+      body: PageView(
+       children: <Widget>[
+           Devps(),
+           About(),
+           Skills(),
+           Work(),
+           Contact(),
+       ],
           scrollDirection: Axis.vertical,
           controller: controller,
-          physics: NeverScrollableScrollPhysics(),
+          physics: new NeverScrollableScrollPhysics(),
           //pageSnapping: false,
           
         ),
-      ),
     );
   }
 }

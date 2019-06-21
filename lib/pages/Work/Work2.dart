@@ -57,6 +57,7 @@ void dispose() {
                 SizedBox(height: 30.0,),
                   Row(
                     children: <Widget>[
+                      SizedBox(width:30.0),
                       Container(
                         height: MediaQuery.of(context).size.height/2,
                         width: MediaQuery.of(context).size.width/3,
@@ -137,7 +138,6 @@ void dispose() {
                       ),
                     ],
                   ),
-                  Container(height: MediaQuery.of(context).size.height/2,child: Image.asset("hpl.jpg")),
                     ],
                   ),
                 ],

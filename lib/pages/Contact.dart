@@ -76,6 +76,17 @@ class Contact extends StatelessWidget {
                                
                                 ),
                             ),
+                            Container(
+                              height: 80.0,
+                              child: FlatButton(
+                                color: Colors.transparent,
+                              onPressed: () {
+                               html.window.open('https://github.com/piyushsinha24','github');
+                               },
+                               child: Image.asset("git.png")
+                               
+                                ),
+                            ),
                           ],
                         ),
                       ),

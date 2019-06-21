@@ -1,6 +1,7 @@
 import 'package:flutter_web/material.dart';
 import 'dart:async';
 import 'dart:html' as html;
+//
 
 class Work1 extends StatefulWidget {
   @override
@@ -136,8 +137,7 @@ void dispose() {
                         ),
                       ),
                     ],
-                  ),
-                  Container(height: MediaQuery.of(context).size.height/2,child: Image.asset("quizadda.png")),
+                  ),            
                     ],
                   ),
                 ],
