@@ -6,10 +6,8 @@ class Contact extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          image: DecorationImage(
-        image: AssetImage("contact.jpg"),
-        fit: BoxFit.cover,
-      )),
+         color: Colors.black,
+         ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
@@ -20,7 +18,7 @@ class Contact extends StatelessWidget {
               style: TextStyle(
                 fontSize: 50.0,
                 fontFamily: 'GoogleSansRegular',
-                color: Colors.black54,
+                color: Colors.white,
               ),
             ),
           ),
@@ -83,7 +81,7 @@ class Contact extends StatelessWidget {
                         html.window
                             .open('https://github.com/piyushsinha24', 'github');
                       },
-                      child: Image.asset("git.png")),
+                      child: Image.asset("git2.png")),
                 ),
               ],
             ),

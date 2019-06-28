@@ -37,10 +37,7 @@ class _WorkState2 extends State<Work2> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage('work.jpg'),
-          fit: BoxFit.cover,
-        ),
+        color: Colors.black,
       ),
       child: Column(
         children: <Widget>[

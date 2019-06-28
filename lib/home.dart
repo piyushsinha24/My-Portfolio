@@ -72,7 +72,8 @@ class _HomePageState extends State<HomePage> {
               fontSize: 30.0,
               fontWeight: FontWeight.bold),
         ),
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.black87,
+        elevation: 20.0,
         actions: <Widget>[
           _buildPageButtons("home", 0),
           _buildPageButtons("about", 1),

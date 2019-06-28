@@ -62,21 +62,27 @@ class _DevpsState extends State<Devps> {
                 ),
               ),
               Container(
-                margin: const EdgeInsets.all(2.0),
+                margin: const EdgeInsets.only(right: 420.0,left: 420.0),
                 decoration: new BoxDecoration(
                   color: Colors.transparent,
                   border: Border.all(color: Colors.white, width: 2.0),
                 ),
                 child: RaisedButton(
                   color: Colors.transparent,
-                  child: Text(
-                    "Know Me More",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontFamily: 'GoogleSansRegular',
-                      fontSize: 20.0,
-                      //fontWeight: FontWeight.bold
-                    ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text(
+                        "Know Me More",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: 'GoogleSansRegular',
+                          fontSize: 20.0,
+                          //fontWeight: FontWeight.bold
+                        ),
+                      ),
+                      Icon(Icons.mouse,color: Colors.white,size: 20.0,),
+                    ],
                   ),
                   onPressed: () {
                     setState(() {

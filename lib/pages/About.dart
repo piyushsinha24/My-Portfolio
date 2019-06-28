@@ -6,7 +6,7 @@ class About extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Colors.black,
       ),
       child: Column(
         children: <Widget>[
@@ -17,7 +17,7 @@ class About extends StatelessWidget {
               style: TextStyle(
                 fontSize: 50.0,
                 fontFamily: 'GoogleSansRegular',
-                color: Colors.black,
+                color: Colors.white,
               ),
             ),
           ),
@@ -32,7 +32,7 @@ class About extends StatelessWidget {
                       color: Colors.transparent,
                       border: Border(
                         bottom: BorderSide(
-                          color: Colors.black,
+                          color: Colors.white,
                           width: 2.0,
                         ),
                       ),
@@ -47,7 +47,7 @@ class About extends StatelessWidget {
                             style: TextStyle(
                               fontSize: 30.0,
                               fontFamily: 'GoogleSansRegular',
-                              color: Colors.black,
+                              color: Colors.white,
                             ),
                           ),
                         ),
@@ -59,7 +59,7 @@ class About extends StatelessWidget {
                             style: TextStyle(
                               fontSize: 20.0,
                               fontFamily: 'GoogleSansRegular',
-                              color: Colors.black,
+                              color: Colors.white,
                             ),
                           ),
                         ),
@@ -73,7 +73,7 @@ class About extends StatelessWidget {
                                 style: TextStyle(
                                   fontSize: 30.0,
                                   fontFamily: 'GoogleSansRegular',
-                                  color: Colors.black54,
+                                  color: Colors.white,
                                 ),
                               ),
                               Text(
@@ -92,7 +92,7 @@ class About extends StatelessWidget {
                 Container(
                   decoration: new BoxDecoration(
                     color: Colors.black,
-                    border: Border.all(color: Colors.white10, width: 2.0),
+                    border: Border.all(color: Colors.white, width: 2.0),
                   ),
                   width: 300,
                   height: 300,
@@ -102,13 +102,14 @@ class About extends StatelessWidget {
             ),
           ),
           RaisedButton(
+            //elevation: 20.0,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10.0)),
-            color: Colors.black,
+            color: Colors.white,
             child: Text(
               "Resume",
               style: TextStyle(
-                color: Colors.white,
+                color: Colors.black,
                 fontFamily: 'GoogleSansRegular',
                 fontSize: 30.0,
                 //fontWeight: FontWeight.bold
