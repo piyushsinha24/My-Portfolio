@@ -1,4 +1,5 @@
 import 'package:flutter_web/material.dart';
+import 'package:web_demo/pages/Work/Work3.dart';
 //
 import './Work/Work1.dart';
 import './Work/Work2.dart';
@@ -22,6 +23,7 @@ class _WorkState extends State<Work> {
     return PageView(
       controller: _pageController,
       children: <Widget>[
+        Work3(),
         Work1(),
         Work2(),
       ],
@@ -42,8 +44,8 @@ class _WorkState extends State<Work> {
             child: _currentPage != 0
                 ? IconButton(
                     icon: Icon(Icons.arrow_left),
-                    iconSize: 200.0,
-                    color: Colors.white.withOpacity(0.5),
+                    iconSize: 300.0,
+                    color: Colors.pink.withOpacity(0.5),
                     onPressed: () => _pageController.previousPage(
                         curve: Curves.easeIn,
                         duration: Duration(milliseconds: 400)),
@@ -52,11 +54,11 @@ class _WorkState extends State<Work> {
           ),
           Container(
             padding: EdgeInsets.all(10.0),
-            child: _currentPage != 1
+            child: _currentPage != 2
                 ? IconButton(
                     icon: Icon(Icons.arrow_right),
-                    iconSize: 200.0,
-                    color: Colors.white.withOpacity(0.5),
+                    iconSize: 300.0,
+                    color: Colors.pink.withOpacity(0.5),
                     onPressed: () => _pageController.nextPage(
                         curve: Curves.easeIn,
                         duration: Duration(milliseconds: 400)),

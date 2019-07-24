@@ -3,12 +3,12 @@ import 'dart:async';
 import 'dart:html' as html;
 //
 
-class Work1 extends StatefulWidget {
+class Work3 extends StatefulWidget {
   @override
-  _WorkState1 createState() => _WorkState1();
+  _WorkState3 createState() => _WorkState3();
 }
 
-class _WorkState1 extends State<Work1> {
+class _WorkState3 extends State<Work3> {
   PageController controller2 = PageController();
   int _currentindex;
   Timer _timer;
@@ -44,24 +44,23 @@ class _WorkState1 extends State<Work1> {
       width: MediaQuery.of(context).size.width,
       child: Card(
         color: Colors.black54,
-        child: Column(
+              child: Column(
           children: <Widget>[
             SizedBox(
               height: 80.0,
             ),
             Row(
               children: <Widget>[
-                SizedBox(width: 80.0,),
                 Container(
                   height: MediaQuery.of(context).size.height / 2,
                   width: MediaQuery.of(context).size.width / 3,
                   child: PageView(
                     children: <Widget>[
-                      Image.asset("quizadda1.png"),
-                      Image.asset("quizadda2.png"),
-                      Image.asset("quizadda3.png"),
-                      Image.asset("quizadda4.png"),
-                      Image.asset("quizadda5.png"),
+                      Image.asset("gdg1.png"),
+                      Image.asset("gdg2.png"),
+                      Image.asset("gdg3.png"),
+                      Image.asset("gdg4.png"),
+                      Image.asset("gdg5.png"),
                     ],
                     controller: controller2,
                     scrollDirection: Axis.horizontal,
@@ -72,11 +71,11 @@ class _WorkState1 extends State<Work1> {
                 ),
                 Column(
                   children: <Widget>[
-                    Container(height: 80.0, child: Image.asset("quizadda.png")),
+                    Container(height: 80.0, child: Image.asset("gdg.png")),
                     Padding(
                       padding: const EdgeInsets.all(5.0),
                       child: Text(
-                        "QuizAdda",
+                        "GDG Kolkata DevFest 2019",
                         style: TextStyle(
                           fontSize: 40.0,
                           fontFamily: 'GoogleSansRegular',
@@ -87,7 +86,7 @@ class _WorkState1 extends State<Work1> {
                     Container(
                       width: 500.0,
                       child: Text(
-                        "Test your knowledge in many different categories and sharpen your skills with QuizAdda app. Free to use, user-contributed trivia question database from opentdb API.",
+                        "The Official App for GDG DevFest Kolkata, the largest DevFest in Eastern India.Right from applying for the event to making your way to the venue, from browsing different sessions of your interest to finding about the speakers, this app will guide you throughout.",
                         style: TextStyle(
                           fontSize: 20.0,
                           fontFamily: 'GoogleSansRegular',
@@ -101,8 +100,8 @@ class _WorkState1 extends State<Work1> {
                         FlatButton(
                           onPressed: () {
                             html.window.open(
-                                'https://play.google.com/store/apps/details?id=devPS.quizadda',
-                                'QuizAddaPlay');
+                                'https://play.google.com/store/apps/details?id=gdg.devfest19',
+                                'gdg');
                           },
                           child: Container(
                             height: 100,
@@ -118,8 +117,8 @@ class _WorkState1 extends State<Work1> {
                         FlatButton(
                           onPressed: () {
                             html.window.open(
-                                'https://github.com/piyushsinha24/QuizAdda',
-                                'QuizAddaGit');
+                                'https://github.com/Rimjhim28/DevFest-19-App',
+                                'gdgGit');
                           },
                           child: Container(
                             padding: EdgeInsets.all(7.0),

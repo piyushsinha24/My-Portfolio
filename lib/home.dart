@@ -68,11 +68,11 @@ class _HomePageState extends State<HomePage> {
           "devPS",
           style: TextStyle(
               color: Colors.white,
-              fontFamily: 'GoogleSansRegular',
-              fontSize: 30.0,
-              fontWeight: FontWeight.bold),
+              fontFamily: 'ks',
+              fontSize: 35.0,
+              ),
         ),
-        backgroundColor: Colors.black87,
+        backgroundColor: Colors.black,
         elevation: 20.0,
         actions: <Widget>[
           _buildPageButtons("home", 0),
