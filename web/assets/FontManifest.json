@@ -1,28 +1,26 @@
-
 [
-  {
-    "family": "MaterialIcons",
-    "fonts": [
-      {
-        "asset": "https://fonts.gstatic.com/s/materialicons/v42/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2"
-      }
-    ]
-  },
-  {
-    "family": "GoogleSansRegular",
-    "fonts": [
-      {
-        "asset": "GoogleSansRegular.ttf"
-      }
-    ]
-  },
-  {
-    "family": "ks",
-    "fonts": [
-      {
-        "asset": "ks.otf"
-      }
-    ]
-  }
+    {
+        "family": "GoogleSans",
+        "fonts": [
+            {
+                "asset": "fonts/GoogleSans-Medium.ttf"
+            },
+            {
+                "asset": "fonts/GoogleSans-Regular.ttf",
+                "style": "regular"
+            },
+            {
+                "asset": "fonts/GoogleSans-Bold.ttf",
+                "style": "bold"
+            }
+        ]
+    },
+    {
+        "family": "LineIcons",
+        "fonts": [
+            {
+                "asset": "fonts/LineIcons.ttf"
+            }
+        ]
+    }
 ]
-  
