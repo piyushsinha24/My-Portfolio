@@ -3,7 +3,7 @@
 ## Responsive design built with Flutter Web.
 [Lets goto my website](https://devps.info/#/)
 
-![](deviceMockup.png)
+![](smartmockups_k6axwman.png)
 
 
 ## Getting Started
