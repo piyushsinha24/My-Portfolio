@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/screens/contact/contact_screen.dart';
 import 'package:portfolio/screens/home/home_screen.dart';
+import 'package:portfolio/screens/about/about_screen.dart';
 import 'package:portfolio/screens/products/products_screen.dart';
 import 'package:portfolio/style/theme_base.dart';
 import 'package:portfolio/utils/screen_utils.dart';
@@ -88,6 +89,8 @@ class Body extends StatelessWidget {
       case 0:
         return HomeScreen();
       case 1:
+        return AboutScreen();
+      case 2:
         return ProductsScreen();
       default:
         return ContactScreen();

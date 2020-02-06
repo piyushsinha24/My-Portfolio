@@ -7,7 +7,7 @@ class MyDrawerLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var _navLinks = ["Home", "Work", "Contact"];
+    var _navLinks = ["Home", "About", "Work", "Contact"];
     var _width = MediaQuery.of(context).size.width * .65;
 
     List<Widget> _menuItems = _navLinks

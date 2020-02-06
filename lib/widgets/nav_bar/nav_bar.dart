@@ -15,7 +15,7 @@ class NavBar extends StatefulWidget {
 }
 
 class _NavBarState extends State<NavBar> {
-  final navLinks = ["Home", "Work",  "Contact"];
+  final navLinks = ["Home", "About", "Work",  "Contact"];
 
   int _selectedIndex = 0;
 
