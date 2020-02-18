@@ -1,7 +1,7 @@
 # My-Portfolio-Website
 
 ## Responsive design built with Flutter Web.
-[Lets goto my website](https://devps.info/#/)
+
 
 ![](smartmockups_k6axwman.png)
 
